@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    font-weight: lighter;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    border: 3px solid blue;
+}
+
+.sidebar {
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+    background-color: rgb(92, 179, 241);
+    color: white;
+}
+
+.sidebar li, .sidebar h3 {
+    font-weight: 700;
+    font-size: large;
+}
+
+.top-menu ul,
+.bottom-menu ul {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    row-gap: 10px;
+    column-gap: 25px;
+    list-style-type: none;
+    margin: 0;
+    padding: 25px;
+}
+
+.top-menu ul>li, 
+.bottom-menu ul>li {
+    align-self: center;
+}
+
+
+.header {
+    grid-column: 2 / span 2;
+    border: 3px dotted purple;
+}
+
+.projects {
+    grid-row: 2 / span 2;
+    
+}
+
+.projects, .announcements, .trending {
+    background-color: rgb(217, 214, 214);
+    padding: 10px;
+}
+
+.project-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.project-container .card {
+    border-left: 5px solid rgb(255, 186, 10);
+}
+
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h3 {
+    padding: 10px 0px;
+}
+
+.title {
+    font-weight: 700;
+}
+
