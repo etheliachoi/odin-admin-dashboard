@@ -59,7 +59,9 @@
 .header {
     grid-column: 2 / span 2;
     border: 3px dotted purple;
-    padding: 10px
+    padding: 0px 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
 
 .main-content {
@@ -206,7 +208,6 @@ h3 {
 }
 
 .search {
-    width: 60%;
     display: flex;
     padding: 6px;
     border-radius: 28px;
@@ -221,7 +222,6 @@ h3 {
     border: none;
     outline: none;
     background: transparent;
-    width: 100%;
 }
 
 .search-input::placeholder {
@@ -252,4 +252,34 @@ h3 {
     width: auto;
     height: 100%;
     margin-left: -20%;
+}
+
+.row-one {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 60% 10% 1fr 1fr 1fr;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.row-one .notif {
+    grid-column-start: 3;
+    font-size: 2.5vw;
+}
+
+.row-one .pfp-wrapper.small {
+    grid-column-start: 4;
+}
+
+.row-one .username {
+    grid-column-start: 5;
+}
+
+.row-one :not(form) {
+    justify-self: center;
+}
+
+.row-two {
+    display: grid;
+    grid-auto-flow: column;
 }
