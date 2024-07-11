@@ -214,6 +214,7 @@ h3 {
     border-radius: 28px;
     background-color: #efefef;
     transition: background 0.25s box-shadow 0.25s;
+    margin-left: 20px;
 }
 
 .search-input {
