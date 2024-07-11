@@ -3,21 +3,21 @@
 This is the second and final project for the Intermediate HTML and CSS course. We are given a project design file and the goal is to recreate the page using grid. 
 
 ## Process
-The first thing I did was look at the overall page design and think of how to use grid to lay things out. I decided to split up the sections into sidebar, header, and main content. After that, I handled each section one at a time by adding more elements into the HTML and styling them using more grids.
+The first thing I did was look at the overall page design and think of how to use grid to lay things out. I decided to split up the sections into **sidebar, header, and main content**. After that, I handled each section one at a time by adding more elements into the HTML and styling them using more grids.
 
 Each section also uses more grid to layout the elements. 
 
-### Sidebar
+### (i) Sidebar
 I made the dashboard title a flexbox, the top menu bar as a grid parent, as well as the bottom menu bar. With this approach, I can easily make the icons align with the text, control the gaps between logo and text, and place the top and bottom menus at a distance from each other while reusing the same CSS.
 
-### Header
+### (ii) Header
 I made the header element a grid with two rows, where the search bar is the top and the welcome message is the bottom row. Then, each row is also a grid parent for easier styling. I chose this approach instead of directly splitting the header grid into smaller chunks because it will be difficult to align the elements nicely in columns. I also avoided using flexbox even though the row is 1D, because I find it difficult to add extra space between certain elements without using padding, e.g. between the user's full name and buttons. Whereas for grid, I can simply add an empty column and adjust its width to solve this issue.
 
-### Main Content
+### (iii) Main Content
 The main content is made into a grid parent with three sections: Projects, Announcements, and Trending where the latter two each have half the height of the project section. 
 
 #### Projects
-The project section is also made into a grid to place the six cards.  Initially, my thought was to add the icons on the cards using the pseudoelement `::after` to avoid duplicate HTML <img> tags. The pseudoelement allowed me to add all elements but since they are all in one line of CSS under `content`, they stacked up into a column by default and I was not able to style them into a row. At last, I had to make the six cards as grids to place the three icons on the bottom right.
+The project section is also made into a grid to place the six cards.  Initially, my thought was to add the icons on the cards using the pseudo-element `::after` to avoid duplicate HTML `<img>` tags. The pseudo-element allowed me to add all elements but since they are all in one line of CSS under `content`, they stacked up into a column by default and I was not able to style them into a row. At last, I had to make the six cards as grids to place the three icons on the bottom right.
 
 #### Announcements
 Initially, I made the card into a grid with three rows. Then, to add the line between the paragraphs, I realized using `border-bottom` on the grid item does not turn out nicely. For some reason, the border is at the bottom of the text, but not the bottom of the grid item where I want it. To solve this, I added two extra rows for where I need the line to be and styled them to take up minimal space. Then, I added a `border-top` to the empty grid item.
