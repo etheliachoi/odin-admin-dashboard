@@ -13,8 +13,7 @@ body {
 
 .container {
     display: grid;
-    /* grid-template-columns: minmax(200px, 0.7fr) 3fr; */
-    /* grid-template-rows: ; */ 
+    grid-template-columns: minmax(200px, 0.7fr) 3fr;
     width: 100%;
     height: 100vh;
 }
@@ -64,7 +63,6 @@ body {
 
 .header {
     grid-column: 2 / span 2;
-    border: 3px dotted purple;
     padding: 0px 20px;
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -73,21 +71,11 @@ body {
 .main-content {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    
+    grid-template-rows: 1fr min-content;  
 }
 
 .projects {
     grid-row: span 2;
-}
-
-.announcements {
-    border: 3px solid blue;
-    height: 50%;
-}
-
-.trending {
-    border: 3px solid purple;
 }
 
 .projects, .announcements, .trending {
@@ -111,7 +99,7 @@ body {
 
 .card {
     background-color: white;
-    padding: 45px 25px 30px 25px;
+    padding: 38px 25px 30px 25px;
     border-radius: 5px;
 }
 
@@ -196,21 +184,32 @@ h3 {
 
 .announcements .card {
     display: grid;
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    height: 100%;
-    
+    grid-template-rows: 1fr 5px 1fr 5px 1fr;
+    height: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100%);
+    row-gap: 1vw;
+    align-items: center;
 }
 
-.announ-items {
-    
+.announcements .title {
+    font-size: medium;
 }
 
 .announcements p:not(.title) {
-    display: block;
+    font-size: small;
     color: grey;
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    width: calc(70%);
+    padding-top: 10px;
+}
+
+.announcements .row-border{
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    grid-column: 1 / 5;
 }
 
 .search {
