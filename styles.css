@@ -1,22 +1,28 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     font-family: Roboto, sans-serif;
     font-weight: lighter;
-    
+    --theme-color: rgb(92, 179, 241)
+}
+
+body {
+    max-height: 100vh;
 }
 
 .container {
     display: grid;
-    grid-template-columns: minmax(200px, 0.7fr) 3fr;
-    border: 3px solid blue;
-    
+    /* grid-template-columns: minmax(200px, 0.7fr) 3fr; */
+    /* grid-template-rows: ; */ 
+    width: 100%;
+    height: 100vh;
 }
 
 .sidebar {
     grid-row: 1 / 4;
     grid-column: 1 / 2;
-    background-color: rgb(92, 179, 241);
+    background-color: var(--theme-color);
     color: white;
 }
 
@@ -96,7 +102,7 @@
 }
 
 .project-container .card {
-    border-left: 5px solid rgb(255, 186, 10);
+    border-left: 7px solid rgb(255, 186, 10);
     display: grid;
     grid-template-columns: auto 50px 50px 50px;
     grid-template-rows: 1fr 4fr 1fr;
@@ -110,7 +116,7 @@
 }
 
 h3 {
-    padding: 10px 0px;
+    padding: 10px 5px;
 }
 
 .title {
@@ -282,4 +288,49 @@ h3 {
 .row-two {
     display: grid;
     grid-auto-flow: column;
+    grid-template-areas: "pfp hello .. new upload share" "pfp name .. new upload share";
+    grid-template-columns: 0.5fr 1fr 0.3fr 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.row-two .pfp-wrapper.big {
+    grid-area: pfp;
+    justify-self: center;
+}
+
+.row-two .header-text.hello {
+    grid-area: hello;
+    align-self: end;
+}
+
+.row-two .header-text.name {
+    grid-area: name;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.row-two .new {
+    grid-area: new;
+}
+
+.row-two .upload {
+    grid-area: upload;
+}
+
+.row-two .share {
+    grid-area: share;
+}
+
+.row-two button {
+    background-color: var(--theme-color);
+    width: 80%;
+    height: 45%;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    justify-self: center;
 }
