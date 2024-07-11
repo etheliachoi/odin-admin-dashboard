@@ -30,13 +30,19 @@ The card is a grid with four rows to place each user's information, which is als
 
 **Solution**: remains unsolved.
 
+-----
+
 **(2)** Announcements and Trending are half of height of Project, but the cards do not end on the same level, i.e. the last row of Project cards end way above the last row of Trending. This leads to a lot of empty grey space in the bottom of main content. 
 
 **Solution**: For the overall layout, instead of using `grid-template-rows: 1fr 1fr;`, use `grid-template-rows: 1fr min-content;` so that the main content section adjusts its height according to the content.
 
+-----
+
 **(3)** I wanted the paragraphs in Announcements to shrink into `text-overflow: ellipsis` style when the viewport shrinks, but could not get it to work at all.
 
 **Solution**: I ended up opting to use `line-clamp` to restrict the number of lines shown so that the rest of the paragraph becomes ... as I wanted. This approach worked amazing! But the downside is it is not responsive.
+
+-----
 
 **(4)** When I used grid to style Trending, I could not make the user icon span across two rows and have the adjacent column be two separate rows of text. I used `grid-template-rows` and `grid-rows` for this. 
 
