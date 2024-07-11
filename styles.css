@@ -7,10 +7,6 @@
     --theme-color: rgb(92, 179, 241)
 }
 
-body {
-    max-height: 100vh;
-}
-
 .container {
     display: grid;
     grid-template-columns: minmax(200px, 0.7fr) 3fr;
